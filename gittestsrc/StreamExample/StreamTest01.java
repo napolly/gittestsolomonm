@@ -15,5 +15,12 @@ public class StreamTest01 {
         .collect(Collectors.toList());
 
         findresult.forEach(System.out::println);
+
+        List<String> result2 = strings.stream().filter(x -> x.contains("y"))
+        .sorted((str1, str2) -> str2.compareTo(str1))
+        .collect(Collectors.toList());
+
+        //System.out.println 을 메서드레퍼런스로 표현한것.
+        result2.forEach(System.out::println);
     }
 }
